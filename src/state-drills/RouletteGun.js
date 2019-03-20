@@ -40,10 +40,9 @@ class RouletteGun extends React.Component {
   }
 
   understandMortality = () => {
-    if (this.state.spinning) {return 'Spinning the chamber...'};
-    if (!this.state.spinning && this.state.chamber !== this.state.deadlyChamber) {return 'You\'re still alive'}
-    if (!this.state.spinning && this.state.chamber === this.state.deadlyChamber) {return 'You died'}
-    return 'Something else is happening...';
+    if (this.state.spinning) {return 'Spinning the chamber...'} 
+    else if (this.state.chamber === this.state.deadlyChamber) {return 'You died'}
+    else {return 'You\'re still alive'}
   }
 
   render() {
